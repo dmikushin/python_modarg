@@ -1,8 +1,9 @@
 Python callback function given by-reference argument, is unable to modify it. This minimal test case demonstrates the issue.
 
-# Building
+## Building
 
 ```
+git clone --recurse https://github.com/dmikushin/python_modarg.git
 mkdir build
 cd build
 cmake ..
