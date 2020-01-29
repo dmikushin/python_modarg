@@ -9,13 +9,14 @@ PYBIND11_MAKE_OPAQUE(std::vector<int>);
 
 using namespace std;
 
-vector<int> backend(int length, std::function<void (int, int, vector<int>&)>& callback)
+vector<int> backend(int length, std::function<void (int, int, pybind11::object&)>& callback)
 {
 	vector<int> result(length);
+	pybind11::object py_result = pybind11::cast(&result);
 	for (int i = 0; i < result.size(); i++)
 	{
 		result[i] = -1;
-		callback(i, i, result);
+		callback(i, i, py_result);
 	}
 	return result;
 }
