@@ -8,9 +8,8 @@ def callback(a, i, result) :
 
 def main() :
 	length = 10
-	result = stdvectorint(np.zeros(length, np.int32))
 	
-	backend(result, callback)
+	result = backend(length, callback)
 
 	for i in range(length) :
 		print("%d vs %d" % (result[i], i * 10))
