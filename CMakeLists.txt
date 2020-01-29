@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(python_tbb)
+project(python_modarg)
 
 find_package(PythonLibs)
 

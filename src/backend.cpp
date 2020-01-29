@@ -9,13 +9,16 @@ PYBIND11_MAKE_OPAQUE(std::vector<int>);
 
 using namespace std;
 
-void backend(vector<int>& result, std::function<void (int, int&)>& callback)
+void backend(vector<int>& result, std::function<void (int, int, vector<int>&)>& callback)
 {
 	for (int i = 0; i < result.size(); i++)
-		callback(i, result[i]);
+	{
+		result[i] = -1;
+		callback(i, i, result);
+	}
 }
 
-PYBIND11_MODULE(python_tbb, m)
+PYBIND11_MODULE(python_modarg, m)
 {
 	pybind11::bind_vector<std::vector<int> >(m, "stdvectorint");
 

@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-from python_tbb import *
+from python_modarg import *
 import numpy as np
 
-def callback(a, b) :
-	b = int(a) * 10
+def callback(a, i, result) :
+	result.__setitem__(i, int(a) * 10)
 
 def main() :
 	length = 10
