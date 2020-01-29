@@ -7,6 +7,7 @@ git clone --recurse https://github.com/dmikushin/python_modarg.git
 mkdir build
 cd build
 cmake ..
+make -j2
 PYTHONPATH=$(pwd) python3 ../src/frontend.py 
 ```
 
